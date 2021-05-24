@@ -1,0 +1,50 @@
+<!-- Form for add -->
+<form [formGroup]="form" (submit)="onSavePost()">
+  <table>
+    <tr>
+      <th>Order Name</th>
+      <th>Price</th>
+      <th>On&nbsp;5%&nbsp;Promo</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <td>
+        <!-- <mat-form-field> -->
+        <input
+          id="ordName"
+          type="text"
+          formControlName="ordName"
+          placeholder="eg. Latte"
+        />
+        <!-- <mat-error *ngIf="form.get('ordName').invalid"> *Order Name!</mat-error> -->
+        <!-- </mat-form-field> -->
+      </td>
+      <td>
+        <!-- <mat-form-field> -->
+        <input
+          id="ordPrice"
+          rows="4"
+          formControlName="ordPrice"
+          placeholder="0.00"
+        />
+        <!-- <mat-error *ngIf="form.get('ordPrice').invalid"
+          >*Order Price!</mat-error
+        > -->
+        <!-- </mat-form-field> -->
+      </td>
+      <td>
+        <input
+          id="ordDiscounted"
+          formControlName="discounted"
+          type="checkbox"
+          name="discounted"
+        />
+      </td>
+      <td>
+        <button id="addOrderBtn" class="btn btn-sm" type="submit">
+          Place Order
+        </button>
+      </td>
+    </tr>
+  </table>
+</form>

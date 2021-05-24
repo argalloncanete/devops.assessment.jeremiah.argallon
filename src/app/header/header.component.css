@@ -1,0 +1,14 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.header1 {
+  background-color: black;
+}
+img {
+  height: 5rem;
+}
+/* a {
+  color: whitesmoke;
+  text-align: center;
+} */

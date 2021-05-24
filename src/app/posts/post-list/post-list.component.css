@@ -1,0 +1,118 @@
+:host {
+  display: block;
+}
+
+.info-text {
+  text-align: center;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: "Courier New", Courier, monospace;
+}
+
+td {
+  border: 1px solid #dddddd;
+  text-align: center;
+}
+th {
+  background-color: darkblue;
+  color: whitesmoke;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: 1px solid #dddddd;
+}
+tr:nth-child(even) {
+  background-color: rgb(230, 246, 252);
+}
+u {
+  color: blue;
+}
+.regTotal {
+  font-weight: bold;
+  color: black;
+}
+.totalBill {
+  padding-top: 1rem;
+}
+.totalDis {
+  padding-top: 1rem;
+  background-color: rgb(230, 246, 252);
+}
+a {
+  font-family: "Courier New", Courier, monospace;
+}
+.check {
+  float: center;
+  padding: 1rem;
+}
+
+.float-container {
+  border: 3px solid #fff;
+  padding: 20px;
+}
+
+.float-child {
+  width: 35%;
+  float: left;
+  padding-left: 20px;
+  padding-bottom: 50px;
+  /* border: 2px solid red; */
+}
+.float-child1 {
+  width: 65%;
+  float: left;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 40px;
+  /* border: 2px solid red; */
+}
+img {
+  height: 500px;
+  float: right;
+}
+
+.name {
+  padding: 1rem;
+  width: 2%;
+}
+.price {
+  padding: 1rem;
+  width: 2%;
+}
+.clerk {
+  padding: 0.5rem;
+}
+
+/* alert */
+.alert {
+  padding: 8px;
+  background-color: rgb(124, 228, 124);
+  color: white;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+}
+.alertApi {
+  padding: 8px;
+  background-color: rgb(243, 65, 65);
+  color: white;
+  text-align: center;
+}
+
+.closebtn {
+  color: black;
+  font-size: 15px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: whitesmoke;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 20%;
+}
+
+.closebtn:hover {
+  color: black;
+}

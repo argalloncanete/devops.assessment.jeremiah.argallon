@@ -1,0 +1,78 @@
+.btn {
+  border-radius: 25px;
+  background-color: darkblue;
+  color: whitesmoke;
+  font-family: "Courier New", Courier, monospace;
+}
+:host {
+  display: block;
+  margin-top: 1rem;
+}
+
+.info-text {
+  text-align: center;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: "Courier New", Courier, monospace;
+}
+.tbList {
+  margin-top: 1rem;
+}
+
+td {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+th {
+  background-color: darkblue;
+  color: whitesmoke;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: 1px solid #dddddd;
+}
+tr:nth-child(even) {
+  background-color: rgb(230, 246, 252);
+}
+u {
+  color: blue;
+}
+
+a {
+  font-family: "Courier New", Courier, monospace;
+}
+.check {
+  margin-left: 2rem;
+  align-self: center;
+}
+input {
+  align-self: center;
+}
+
+/* alert */
+.alert {
+  padding: 8px;
+  background-color: rgb(124, 228, 124);
+  color: white;
+  text-align: center;
+}
+
+.closebtn {
+  color: white;
+  font-size: 15px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: green;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 20%;
+}
+
+.closebtn:hover {
+  color: black;
+}

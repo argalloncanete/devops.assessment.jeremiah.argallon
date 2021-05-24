@@ -1,0 +1,149 @@
+<!-- API Error alert -->
+<div class="alertApi" *ngIf="apiError && !added">
+  Cannot load details. Something went wrong.
+  <span class="closebtn" (click)="onAPIClose()">&times;</span>
+</div>
+
+<!-- add alert -->
+<div class="alert" *ngIf="added && !apiError">
+  Order is successfully added.
+  <span class="closebtn" (click)="(onAdded)">&times;</span>
+</div>
+
+<div class="alertApi" *ngIf="added && apiError">
+  Unable to add order.Something went wrong.
+  <span class="closebtn" (click)="(onAdded)">&times;</span>
+</div>
+
+<!-- update alert -->
+<div class="alert" *ngIf="updated && !apiError">
+  Order is successfully updated.
+  <span class="closebtn" (click)="onUpdated()">&times;</span>
+</div>
+
+<div class="alertApi" *ngIf="updated && apiError">
+  Unable to update order.Something went wrong.
+  <span class="closebtn" (click)="onUpdated()">&times;</span>
+</div>
+
+<!-- delete alert -->
+<div class="alert" *ngIf="deleted && !apiError">
+  Order is successfully deleted.
+  <span class="closebtn" (click)="onDeleted()">&times;</span>
+</div>
+
+<div class="alertApi" *ngIf="deleted && apiError">
+  Unable to delete order.Something went wrong.
+  <span class="closebtn" (click)="onDeleted()">&times;</span>
+</div>
+
+<!-- container start -->
+<div class="float-container">
+  <div class="float-child">
+    <div class="green">
+      <img src="assets/img/menu.png" alt="" />
+    </div>
+  </div>
+
+  <div class="float-child1">
+    <div class="blue">
+      <app-post-create></app-post-create>
+      <!-- table for get list -->
+      <mat-card *ngIf="!apiError">
+        <table>
+          <tr>
+            <td class="clerk">Attending Clerk: Jeremiah Argallon</td>
+          </tr>
+        </table>
+        <table>
+          <tbody>
+            <tr class="tableHead">
+              <th>Order Name</th>
+              <th>Price</th>
+              <th>On 5% Promo</th>
+              <th>Action</th>
+            </tr>
+            <tr *ngFor="let post of posts">
+              <td>{{ post.ordName }}</td>
+              <td>${{ post.ordPrice }}</td>
+              <td>
+                <input [checked]="post.discounted" type="checkbox" disabled />
+              </td>
+              <td>
+                <a mat-button id="edit" color="primary" (click)="onEdit(post)"
+                  ><u>Edit</u></a
+                >|
+                <a mat-button id="delete" (click)="onDelete(post.id)"
+                  ><u>Delete</u></a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- table for get list end -->
+        <!-- table for edit start -->
+        <form [formGroup]="editForm">
+          <table *ngIf="editTable">
+            <tr>
+              <td class="name">
+                <input
+                  id="updName"
+                  class="inputname"
+                  type="text"
+                  formControlName="ordName"
+                />
+              </td>
+              <td class="price">
+                <input
+                  id="updPrice"
+                  class="inputprice"
+                  type="text"
+                  formControlName="ordPrice"
+                />
+              </td>
+              <td class="check">
+                <input
+                  id="updDiscount"
+                  type="checkbox"
+                  formControlName="discounted"
+                />
+              </td>
+              <td>
+                <a
+                  id="updOrd"
+                  mat-button
+                  color="primary"
+                  type="button"
+                  (click)="onUpdate(editForm.value)"
+                  ><u>Update</u></a
+                >|
+                <a mat-button (click)="onCancel()"><u>Cancel</u></a>
+              </td>
+            </tr>
+          </table>
+        </form>
+        <!-- table for edit end -->
+
+        <!-- table for total bill -->
+        <table>
+          <td class="totalBill">
+            Total Regular Bill: &nbsp;<a class="regTotal">${{ totalBill }}</a>
+          </td>
+        </table>
+
+        <!-- table for discounted bill -->
+        <table>
+          <td class="totalDis">
+            Total Discounted Bill: &nbsp;<a class="regTotal"
+              >${{ totalDiscountedBill }}</a
+            >
+          </td>
+        </table>
+      </mat-card>
+      <!-- no orders -->
+      <p class="info-text mat-body-1" *ngIf="posts.length <= 0 && !apiError">
+        No Orders added yet!
+      </p>
+    </div>
+  </div>
+</div>

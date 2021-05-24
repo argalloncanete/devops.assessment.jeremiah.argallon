@@ -1,0 +1,14 @@
+a {
+  color: blue;
+  font-weight: bold;
+}
+.backBtn {
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+}
+.alertApi {
+  padding: 8px;
+  background-color: rgb(243, 65, 65);
+  color: white;
+  text-align: center;
+}
